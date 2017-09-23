@@ -137,8 +137,8 @@ void serverLoop() {
       sendHighSpeed();
     }
     else if (req.indexOf("/full") != -1) {
-      val = "power";
-      sendFull();
+      val = "full";
+      sendFullSpeed();
     }
     else if (req.indexOf("/timer1") != -1) {
     val = "timer1";
@@ -230,15 +230,15 @@ void sendMediumSpeed() {
 }
 
 void sendHighSpeed() {
-   Serial.println("Sending command 'fullspeed' to Itho ventilation unit...");
+   Serial.println("Sending command 'highspeed' to Itho ventilation unit...");
    rf.sendCommand(IthoHigh);
-   Serial.println("Command 'fullspeed' has been sent!");
+   Serial.println("Command 'highspeed' has been sent!");
 }
 
-void sendFull() {
-   Serial.println("Sending command 'power' to Itho ventilation unit...");
+void sendFullSpeed() {
+   Serial.println("Sending command 'fullspeed' to Itho ventilation unit...");
    rf.sendCommand(IthoFull);
-   Serial.println("Command 'power' has been sent!");
+   Serial.println("Command 'fullspeed' has been sent!");
 }
 
 void sendTimer1() {
